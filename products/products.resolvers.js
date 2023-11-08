@@ -22,4 +22,15 @@ module.exports = {
       return productsModel.getProductById(id);
     },
   },
+  Mutation: {
+    addNewProduct: (_, args) => {
+      const { id, description, price } = args;
+      console.log('Adding new product: ', id, description, price);
+      return productsModel.addNewProduct(id, description, price);
+    },
+    addNewProductReview: (_, args) => {
+      const { id, rating, comment } = args;
+      return productsModel.addNewProductReview(id, rating, comment);
+    },
+  },
 };
